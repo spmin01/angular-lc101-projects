@@ -13,9 +13,12 @@ export class MovieListComponent implements OnInit {
    ngOnInit() {
    }
 
-   addMovie(newTitle: string) {
+   // returns true if successful, false if unsuccessful
+   addMovie(newTitle: string): boolean {
       if(!this.movies.includes(newTitle) && newTitle !== '') {
          this.movies.push(newTitle);
+         return true;
       }
+      return false;
    }
 }
